@@ -4,12 +4,25 @@ variable "table_name" {
 
 variable "partition_key" {
   type        = string
-  description = "aka primary key aka id"
+  description = "DynamoDB table partition key (hash key)"
 }
 
 variable "sort_key" {
-  type    = string
-  default = null
+  type        = string
+  default     = null
+  description = "DynamoDB table sort key (range key)"
+}
+
+variable "enable_stream" {
+  type        = bool
+  default     = false
+  description = "Enable/disable streams"
+}
+
+variable "stream_view_type" {
+  type        = string
+  default     = "NEW_IMAGE"
+  description = "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_StreamSpecification.html"
 }
 
 variable "attributes" {

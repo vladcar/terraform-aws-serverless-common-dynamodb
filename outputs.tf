@@ -9,3 +9,7 @@ output "dynamodb_name" {
 output "dynamodb_id" {
   value = aws_dynamodb_table.dynamodb-table.id
 }
+
+output "stream_arn" {
+  value = aws_dynamodb_table.dynamodb-table.stream_arn
+}

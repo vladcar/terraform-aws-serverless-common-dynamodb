@@ -3,10 +3,12 @@
 #####################################################
 
 resource "aws_dynamodb_table" "dynamodb-table" {
-  name         = var.table_name
-  hash_key     = var.partition_key
-  range_key    = var.sort_key
-  billing_mode = "PAY_PER_REQUEST"
+  name             = var.table_name
+  hash_key         = var.partition_key
+  range_key        = var.sort_key
+  billing_mode     = "PAY_PER_REQUEST"
+  stream_enabled   = var.enable_stream
+  stream_view_type = var.stream_view_type
 
   dynamic "attribute" {
     for_each = var.attributes
