@@ -21,7 +21,7 @@ variable "enable_stream" {
 
 variable "stream_view_type" {
   type        = string
-  default     = "NEW_IMAGE"
+  default     = ""
   description = "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_StreamSpecification.html"
 }
 
